@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app01">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="estilos/custom.css">
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>	
+</head>
+<body ng-controller="MiController06">
+<header>
+	<h1>Gestion Tareas</h1>	
+</header><!-- /header -->
+<div class="contenedor">
+	<ng-include src="'vistas/altaTarea.html'"></ng-include>
+	<ng-include src="'vistas/listaTarea.html'"></ng-include>
+</div>
+<script type="text/javascript" src="app.js"></script>	
+<script type="text/javascript" src="controller/MiController06.js"></script>
+</body>
+</html>

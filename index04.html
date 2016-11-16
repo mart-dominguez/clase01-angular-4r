@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app01">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="estilos/custom.css">
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>	
+</head>
+<body ng-controller="MiController04">
+<header>
+	<h1>Gestion Tareas</h1>	
+</header><!-- /header -->
+<div class="contenedor">
+	<div  class="bloqueFormulario">
+		<h2>{{tituloAlta}}</h2>
+		<span>Titulo:<input type="text" id="txtTituloTarea" ng-model="tareaActual.titulo" /></span>
+		<span>Horas:<input type="number" id="txtHorasTarea" ng-model="tareaActual.horas" /></span>
+		<span>Fecha Fin:<input type="date" id="txtFechaFinTarea" ng-model="tareaActual.fechaFin" /></span>
+		<span>
+			<button type="button" ng-click="nuevaTarea()">Nueva</button>
+			<button type="button" ng-click="agregarTarea()">Guardar</button>
+		</span>
+	</div>
+	<div  class="bloqueLista">
+		<h2>{{tituloLista}}</h2>
+		<h3 ng-show="listaTareas.length==0">No hay tareas creadas</h3>
+		<ul ng-hide="listaTareas.length==0">
+			<li ng-repeat="unaTarea in listaTareas ">
+				<span>{{unaTarea.titulo}} </span>
+				<span>{{unaTarea.horas}} </span>
+				<span>{{unaTarea.fechaFin}} </span>
+				<span><button type="button" ng-click="borrarTarea($index)">borrar</button></span>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript" src="app.js"></script>	
+<script type="text/javascript" src="controller/MiController04.js"></script>
+</body>
+</html>
